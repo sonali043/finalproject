@@ -1,0 +1,82 @@
+
+/*----- SECTION 3 -----*/
+.game {position: absolute; top: 0; left: 0; width: 100%; height: 100%; -webkit-transform-origin: bottom center; transform-origin: bottom center}
+.game .field {position: absolute; bottom: 0; left: 50%; width: 1920px; transform: translateX(-50%); -webkit-transform: translateX(-50%)}
+.game .basket {position: absolute; bottom: 100px; left: 50%; width: 256px; height: 680px; transform: translateX(-50%); -webkit-transform: translateX(-50%)}
+.game .basket-field {position: absolute; top: 0; left: 0; z-index: 0; width: 100%}
+.game .basket-bar {position: absolute; top: 0; left: 0; z-index: 1; width: 100%}
+.game .basket-net {position: absolute; top: 140px; left: 79px; z-index: 1; width: 100px; -webkit-transform-origin: 50% 0; transform-origin: 50% 0}
+.game .basket.goal .basket-bar,
+.game .basket.goal .basket-net {z-index: 10}
+.game .basket.goal .basket-net {-webkit-animation: basket-net 0.5s ease 0.8s; animation: basket-net 0.5s ease 0.8s}
+.game .power-bar {position: absolute; bottom: 800px; left: 50%; z-index: 10; width: 437px; height: 57px; padding: 9px; background: url('../img/game/power_bar.png') no-repeat top center; transform: translateX(-50%); -webkit-transform: translateX(-50%)}
+.game .power-bar-handler {position: absolute; left: 0}
+
+.game .ball-wrapper {position: absolute; bottom: 310px; left: 50%; z-index: 5; width: 91px; height: 91px; margin-left: -45px; perspective: 300px}
+.game .ball-wrapper .ball {position: absolute}
+.game .ball-wrapper.prepare .ball {-webkit-animation: ball-prepare 0.5s ease; animation: ball-prepare 0.5s ease}
+.game .ball-wrapper.prepare + .player .hands {-webkit-animation: hands-prepare 0.5s ease; animation: hands-prepare 0.5s ease}
+
+.game-results {position: absolute; top: 40px; right: 40px; z-index: 5; width: 210px; height: 290px; -webkit-transform-origin: bottom right; transform-origin: bottom right}
+.game-results .name {position: relative; width: 100%; height: 146px; background: #ffff00 ;}
+.game-results .name > * {display: none; padding: 22px 0px; color: #d8583a; font-family: 'CoreCircusPierrot2'; font-size: 72px; font-weight: 400; line-height: 1.2em; text-align: center; text-indent: -10px; letter-spacing: -14px}
+.game-results .name span {position: relative; z-index: 1}
+.game-results .name:before {content: ''; position: absolute; top: 5px; left: 6px; width: 100%; height: 146px; background: #f7f7f7}
+.game-results .points {width: 100%; height: 104px; background: #4157f3; color: #fff; font-family: 'Quantico'; font-size: 70px; text-align: center}
+.game-results .points span {position: relative; top: 7px; left: 33px; z-index: 1; letter-spacing: 60px}
+
+.game-results .throws {width: 100%; height: 34px; background: #d2d2d2; color: #666; font-family: 'Quantico'; font-size: 16px; text-align: center}
+.game-results .throws > span {position: relative; left: 9px; z-index: 1; line-height: 43px}
+[data-player="1"] .game-results .name .player-1 {display: block}
+[data-player="2"] .game-results .name .player-2 {display: block}
+[data-player="3"] .game-results .name .player-3 {display: block}
+[data-player="4"] .game-results .name .player-4 {display: block}
+[data-player="5"] .game-results .name .player-5 {display: block}
+@media all and (max-height: 799px) {
+    .viewport-xm .game-results,
+    .viewport-xs .game-results {-webkit-transform: scale(0.4); transform: scale(0.4)}
+    .viewport-xm .game-results {top: 10px; -webkit-transform-origin: top right; transform-origin: top right}
+    .viewport-xs .game-results {top: auto; bottom: 10px; right: 10px}
+}
+@media all and (min-height: 800px) {
+    .viewport-xm .game-results {top: auto; bottom: 10px}
+}
+@media all and (max-height: 600px) {
+    .viewport-sm .game-results {-webkit-transform: scale(0.7); transform: scale(0.7); -webkit-transform-origin: top right; transform-origin: top right;}
+}
+
+.game .fan {position: absolute; left: 50%; bottom: 370px; width: 154px; height: 218px; -webkit-transform-origin: 50% 80%; transform-origin: 50% 80}
+.game .fan-1 {margin-left: -430px; -webkit-animation: fan-1 0.8s ease infinite alternate; animation: fan-1 0.8s ease infinite alternate}
+.game .fan-2 {margin-left: -320px; -webkit-animation: fan-2 1s ease infinite alternate; animation: fan-2 1s ease infinite alternate}
+.game .fan-3 {margin-left: -200px; -webkit-animation: fan-3 1.5s ease infinite; animation: fan-3 1.5s ease infinite}
+.game .fan-4 {margin-left: -120px; -webkit-animation: fan-4 1s ease infinite alternate; animation: fan-4 1s ease infinite alternate}
+.game .fan-5 {margin-left: 0px; -webkit-animation: fan-5 2s ease infinite alternate; animation: fan-5 2s ease infinite alternate}
+.game .fan-6 {margin-left: 100px; -webkit-animation: fan-1 1.2s ease infinite alternate; animation: fan-1 1.2s ease infinite alternate}
+.game .fan-7 {margin-left: 200px; -webkit-animation: fan-1 1.1s ease infinite alternate; animation: fan-1 1.1s ease infinite alternate}
+.game .fan-8 {margin-left: 320px; -webkit-animation: fan-2 1s ease infinite alternate; animation: fan-2 1s ease infinite alternate}
+.game .fan-9 {margin-left: 400px; -webkit-animation: fan-4 1.3s ease infinite alternate; animation: fan-4 1,3s ease infinite alternate}
+
+.viewport-xm .fan,
+.viewport-xs .fan {-webkit-animation: none; animation: none}
+
+.game .player {position: absolute; left: 50%; bottom: 0; z-index: 6; width: 137px; height: 345px; transform: translateX(-50%); -webkit-transform: translateX(-50%)}
+.game .player > * {position: absolute; left: 50%; bottom: 0; background-repeat: no-repeat; background-size: 100%; transform: translateX(-50%); -webkit-transform: translateX(-50%)}
+.game .player .body {bottom: 90px; width: 137px; height: 287px; background-image: url('../img/game/player-1/bodyy.svg')}
+.game .player .legs {bottom: 0; width: 137px; height: 130px; background-image: url('../img/game/player-1/legd.svg')}
+
+.game .player.throw .body {-webkit-animation: throw-body 1s ease-out; animation: throw-body 1s ease-out}
+.game .player.throw .legs {-webkit-animation: throw-legs 0.5s ease-out 0.5s; animation: throw-legs 0.5s ease-out 0.5s}
+.game .player.throw .hands {-webkit-animation: throw-hands 4s ease-out; animation: throw-hands 4s ease-out}
+
+[data-player="2"] .game .player .body {bottom: 80px; height: 300px; background-image: url('../img/game/player-2/body.svg')}
+[data-player="2"] .player .legs {bottom: -115px; width: 120px; height: 220px; margin-left: -1px; background-image: url('../img/game/player-2/legs.svg')}
+[data-player="2"] .player .hands {background-image: url('../img/game/player-2/hands.svg')}
+[data-player="3"] .game .player .body {background-image: url('../img/game/player-3/body.svg')}
+[data-player="3"] .player .legs {bottom: 10px; background-image: url('../img/game/player-3/legs.svg')}
+[data-player="3"] .player .hands {background-image: url('../img/game/player-3/hands.svg')}
+[data-player="4"] .game .player .body {background-image: url('../img/game/player-4/body.svg')}
+[data-player="4"] .player .legs {bottom: 28px; background-image: url('../img/game/player-4/legs.svg')}
+[data-player="4"] .player .hands {background-image: url('../img/game/player-4/hands.svg')}
+[data-player="5"] .game .player .body {background-image: url('../img/game/player-5/body.svg')}
+[data-player="5"] .player .legs {bottom: 10px; width: 125px; margin-left: -3px; background-image: url('../img/game/player-5/legs.svg')}
+[data-player="5"] .player .hands {background-image: url('../img/game/player-5/hands.svg')}

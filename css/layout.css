@@ -1,0 +1,702 @@
+@font-face {
+    font-family: 'CoreCircusPierrot2';
+    src: url('../fonts/2DA5DD_0_0.eot');
+    src: url('../fonts/2DA5DD_0_0.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/2DA5DD_0_0.woff2') format('woff2'),
+    url('../fonts/2DA5DD_0_0.woff') format('woff'),
+    url('../fonts/2DA5DD_0_0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Courgette';
+    src: url('../fonts/Courgette-Regular-webfont.eot');
+    src: url('../fonts/Courgette-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Courgette-Regular-webfont.woff2') format('woff2'),
+    url('../fonts/Courgette-Regular-webfont.woff') format('woff'),
+    url('../fonts/Courgette-Regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('../fonts/Oswald-Regular-webfont.eot');
+    src: url('../fonts/Oswald-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Oswald-Regular-webfont.woff2') format('woff2'),
+    url('../fonts/Oswald-Regular-webfont.woff') format('woff'),
+    url('../fonts/Oswald-Regular-webfont.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Oswald';
+    src: url('../fonts/Oswald-Bold-webfont.eot');
+    src: url('../fonts/Oswald-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Oswald-Bold-webfont.woff2') format('woff2'),
+    url('../fonts/Oswald-Bold-webfont.woff') format('woff'),
+    url('../fonts/Oswald-Bold-webfont.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Quantico';
+    src: url('../fonts/Quantico-Bold-webfont.eot');
+    src: url('../fonts/Quantico-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Quantico-Bold-webfont.woff2') format('woff2'),
+    url('../fonts/Quantico-Bold-webfont.woff') format('woff'),
+    url('../fonts/Quantico-Bold-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*----- BASE -----*/
+body {position: relative; overflow: hidden; width: 100%; background: #ffc97e; font-family: 'Oswald', 'Arial', 'Helvetica', sans-serif}
+body, .grid > * {font-size: 14px}
+
+::selection {background: #b3d4fc; text-shadow: none}
+::-moz-selection {background: #b3d4fc; text-shadow: none}
+
+::-webkit-input-placeholder {color: #fff}
+::-moz-placeholder {color: #fff}
+:-ms-input-placeholder {color: #fff}
+
+main {background: #fff; margin: 20px auto 0; padding: 20px; padding-bottom: 130px}
+.container {width: 1250px}
+.viewport-lg .container {width: 960px}
+.viewport-md .container {width: 720px}
+.viewport-sm .container {width: 620px}
+.viewport-xm .container {width: 420px}
+.viewport-xs .container {width: 300px}
+@media all and (max-height: 600px) {
+    .viewport-sm .container {width: 90%}
+}
+
+a {color: #000}
+a:hover {color: #666}
+
+.button {display: inline-block; width: 87px; height: 87px; border: none; background: #365899; color: #fff; font-family: 'Oswald', 'Arial', 'Helvetica', 'sans-serif'; font-size: 18px; font-weight: 700; text-align: center; text-transform: uppercase; -webkit-transition: all 0.25s ease; transition: all 0.25s ease}
+.button.big {width: auto; height: auto; padding: 38px 20px; font-size: 24px}
+.button.big:before {position: relative; top: 15px; left: -12px; font-size: 30px; line-height: 0}
+.button.secondary {background: #d8583a}
+.button.about {position: fixed; top: 0; right: 0; z-index: 2; -webkit-transition: all 0.25s ease; transition: all 0.25s ease}
+.button:hover {background: #edbf7e; color: #d8583a}
+.button:hover:before{color: #d8583a}
+.loading .button.about {display: none}
+.fp-viewing-2 .button.about {right: -90px}
+
+@media all and (max-height: 800px) {
+    .viewport-xm .button,
+    .viewport-xs .button {width: 50px; height: 50px; font-size: 12px}
+}
+
+
+nav {position: absolute; bottom: 0; left: 0}
+nav button {display: block; width: 157px; height: 157px; margin-top: 5px; border: none; background: #fad5a1; color: #d8583a; font-family: 'Oswald', 'Arial', 'Helvetica', 'sans-serif'; font-size: 18px; font-weight: 700; text-align: center; text-transform: uppercase; -webkit-transition: all 0.25s ease; transition: all 0.25s ease}
+nav button:before {display: block; margin-bottom: 15px; font-size: 64px}
+nav button:hover {background: #edbf7e}
+.viewport-md nav button {width: 128px; height: 128px; font-size: 14px}
+
+@media all and (max-height: 800px) {
+    .viewport-sm nav button {width: 100px; height: 100px; font-size: 14px}
+    .viewport-sm nav button:before {font-size: 48px}
+    .viewport-xm nav button,
+    .viewport-xs nav button {width: 72px; height: 72px; font-size: 10px}
+    .viewport-xm nav button:before,
+    .viewport-xs nav button:before {font-size: 32px}
+    .viewport-sm nav button:before,
+    .viewport-xm nav button:before,
+    .viewport-xs nav button:before {margin-bottom: 5px}
+}
+
+/*----- PAGE -----*/
+#page {position: relative; width: 100%; height: 100%; -webkit-perspective: 1100px; perspective: 1100px}
+
+.logo {position: absolute; top: 20px; left: 50%; z-index: 100; width: 220px; height: 255px; margin: 0 auto; padding-top: 2%; -webkit-transform: translateX(-50%); transform: translateX(-50%); -webkit-transform-origin: top center; transform-origin: top center}
+.viewport-xm .logo,
+.viewport-xs .logo {width: 120px}
+.viewport-xm .logo {top: 10px; left: 40px; width: 100px; -webkit-transform: translateX(0); transform: translateX(0)}
+.iphone.viewport-xs:not(.loading) .logo {top: 0; width: 80px}
+
+.logo img {margin-top: 0; -webkit-transition: all 0.5s ease; transition: all 0.5s ease}
+.loading {overflow: hidden !important}
+.loading .logo img {margin: 0 auto; margin-top: 60px; -webkit-transform: scale(1.5); transform: scale(1.5)}
+
+.logo-small {position: fixed; top: -185px; left: 70px; z-index: 10; width: 156px; height: 180px; -webkit-transition: all 0.25s ease; transition: all 0.25s ease; cursor: pointer}
+.viewport-sm .logo-small,
+.viewport-xm .logo-small,
+.viewport-xs .logo-small {display: none}
+.logo-small.active {top: 70px}
+.viewport-md .logo-small {left: 30px}
+.viewport-md .logo-small.active {left: 30px; top: 30px}
+
+#loading {position: fixed; z-index: 99; top: 0; left: 0; width: 100%; height: 100%; background: #fff; color: #eda949; font-family: 'Courgette'; font-size: 36px; letter-spacing: -2px; ; -webkit-transform: translateY(-100%); transform: translateY(-100%); -webkit-transition: all .5s ease-in; transition: all .5s ease-in}
+#loading figure {position: absolute; left: 50%; top: 100px; width: 150px; height: 150px; margin: 0 auto; padding-top: 100px; -webkit-transform: translateX(-50%); transform: translateX(-50%); text-align: center}
+#loading figure svg {position: absolute; top: 0; left: 50%; margin-left: -40px; -webkit-animation: loading-ball 2s linear infinite; animation: loading-ball 2s linear infinite}
+.loading #loading {-webkit-transform: translateY(0%); transform: translateY(0%)}
+
+@media (max-height: 600px) {
+    .viewport-sm #loading figure {top: 150px; left: 70%}
+    .viewport-sm.loading .logo {left: 120px}
+}
+
+@media (max-height: 400px) {
+    .loading .logo img {width: 80px; margin-top: 20px}
+    #loading figure {top: 160px}
+}
+@media (min-width: 480px) and (max-width: 719px) {
+    .loading .logo img {margin-top: 40px; margin-left: 20px}
+    #loading figure {top: 50px; margin-left: 90px}
+}
+@media (max-width: 479px) {
+    .loading .logo img {width: 120px; margin-top: 40px}
+    #loading figure {top: 250px}
+}
+
+section {position: relative; width: 100%; height: 100%; -webkit-perspective: 600px; perspective: 600px}
+
+/*----- SECTION 1 -----*/
+.section-1 {background: url("http://www.conceptdraw.com/How-To-Guide/picture/Sport-Basketball-court-color-Template.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;}
+.section-1 .boy {position: absolute; bottom: 0; left: 8%; width: 530px; height: 698px; -webkit-transform-origin: center bottom; transform-origin: center bottom}
+.section-1 .boy > * {position: absolute}
+.section-1 .boy .legs {left: 120px; bottom: 0}
+.section-1 .boy .body {left: 134px; bottom: 160px; -webkit-transform-origin: 50%; transform-origin: 50%; -webkit-animation: boy-body .5s linear infinite alternate; animation: boy-body .5s linear infinite alternate; transform-style: preserve-3d}
+.section-1 .boy .head {left: 135px; bottom: 380px; -webkit-animation: boy-head 0.25s linear infinite alternate; animation: boy-head 0.25s linear infinite alternate; transform-style: preserve-3d}
+.section-1 .boy .arm-left {left: 20px; bottom: 200px; -webkit-transform-origin: 100% 20%; transform-origin: 100% 20%; -webkit-animation: boy-arm-left 1s linear infinite; animation: boy-arm-left 1s linear infinite; transform-style: preserve-3d}
+.section-1 .boy .arm-right {left: 260px; bottom: 200px; -webkit-transform-origin: 0% 20%; transform-origin: 0% 20%; -webkit-animation: boy-arm-right 1s linear infinite 0.5s; animation: boy-arm-right 1s linear infinite 0.5s; transform-style: preserve-3d}
+.section-1 .boy .ball {left: 180px; bottom: 0px; -webkit-transform-origin: 50%; transform-origin: 50%; -webkit-animation: boy-ball 1s linear infinite; animation: boy-ball 1s linear infinite; transform-style: preserve-3d}
+.section-1 h1 {position: absolute; left: 40%; width: 790px; height: 250px; color: #d8583a; font-family: 'CoreCircusPierrot2'; font-size: 190px; font-weight: 400; letter-spacing: -34px; -webkit-transform-origin: top center; transform-origin: top center; -webkit-backface-visibility: hidden !important; backface-visibility: hidden !important}
+.section-1 h1 .up {position: absolute; top: 52px; left: 380px; color: #eda949; font-size: 54px; letter-spacing: -11px; -webkit-transform-origin: top center; transform-origin: top center}
+.section-1 h1 .down {position: absolute; top: 118px; left: 390px; color: #eda949; font-family: 'Courgette'; font-size: 74px; letter-spacing: -9px}
+.viewport-lg .section-1 .boy,
+.viewport-lg .section-1 h1 {-webkit-transform: scale(0.8); transform: scale(0.8)}
+.viewport-md .section-1 .boy,
+.viewport-md .section-1 h1 {-webkit-transform: scale(0.7); transform: scale(0.7)}
+.viewport-md .section-1 .boy {left: 0}
+.viewport-md .section-1 h1 {left: 30%}
+.viewport-sm .section-1 .boy {left: 50%; -webkit-transform: scale(0.6) translateX(-440px); transform: scale(0.6) translateX(-440px)}
+.viewport-sm .section-1 h1 {top: 280px; left: 50%; -webkit-transform: scale(0.6) translateX(-660px); transform: scale(0.6) translateX(-660px)}
+.viewport-xm .section-1 .boy {left: auto; right: 20%; -webkit-transform: scale(0.3) translateX(910px); transform: scale(0.3) translateX(910px)}
+.viewport-xs .section-1 .boy {bottom: 72px; left: 50%; -webkit-transform: scale(0.18) translateX(-1200px); transform: scale(0.18) translateX(-1480px)}
+.viewport-xm .section-1 h1 {top: 140px; left: -180px; -webkit-transform: scale(0.35) translateX(0px); transform: scale(0.35) translateX(0px)}
+.viewport-xs .section-1 h1 {top: 170px; left: 50%; -webkit-transform: scale(0.35) translateX(-1150px); transform: scale(0.35) translateX(-1150px)}
+.viewport-xs .section-1 nav,
+.viewport-xs .section-1 nav button {width: 100%}
+.iphone.viewport-xs .section-1 h1 {top: 90px}
+.iphone.viewport-xs .section-1 .boy {-webkit-transform: scale(0.2) translateX(-1320px); transform: scale(0.2) translateX(-1320px)}
+.windowsphone .section-1 .boy * {animation: none !important}
+.windowsphone .section-1 .boy .ball {transform: translate(80px, -70px)}
+.fp-viewing-0 .section-2,
+.fp-viewing-0 .section-3,
+.fp-viewing-0 .section-4,
+.fp-viewing-0 .section-5 {visibility: hidden}
+
+.lang-pl .section-1 h1 .up,
+.lang-pl .section-1 h1 .down {left: 320px}
+
+/* tablet */
+@media all and (max-height: 600px) {
+    .viewport-sm .section-1 figure {left: 40px; width: 160px; margin: 10px auto; transform: translateX(0%)}
+    .viewport-sm .section-1 h1 {top: 200px; left: -20px; margin-left: -14px; -webkit-transform: scale(0.5) translateX(0px); transform: scale(0.5) translateX(0px)}
+    .viewport-sm .section-1 .boy {-webkit-transform: scale(0.5) translateX(200px); transform: scale(0.5) translateX(200px)}
+}
+@media all and (min-height: 800px) {
+    .viewport-xm .section-1 figure {left: 50%; width: 220px; margin: 10px auto; transform: translateX(-50%)}
+    .viewport-xm .section-1 h1 {top: 300px; left: 0; margin-left: -14px; -webkit-transform: scale(0.8) translateX(0px); transform: scale(0.8) translateX(0px)}
+    .viewport-xm .section-1 .boy {-webkit-transform: scale(0.6) translateX(-353px); transform: scale(0.6) translateX(-353px)}
+}
+
+
+/*----- SECTION 2 -----*/
+.section-2 {position: relative; background: #ffe4be}
+.section-2 h2 {margin-left: 8%; color: #8B4513; font-family: 'CoreCircusPierrot2'; font-size: 240px; font-weight: 400; line-height: 0.8em; padding-top: 300px;}
+.section-2 h2 span {display: block; padding-left: 10px; color: #eda949; font-size: 106px;}
+.section-2 h2 .down {position: absolute; top: 105px; left: 390px; color: #eda949; font-family: 'Courgette'; font-size: 85px;}
+.section-2 .scale {position: absolute; top: 0; left: 0; padding: 20px 0; -webkit-transform-origin: 10% 50%; transform-origin: 10% 50%}
+.section-2 .select-player {position: relative; width: 1920px; height: 840px}
+.section-2 .select-player .frame {position: absolute; overflow: hidden; width: 295px; height: 295px; background: #1e4c9a; -webkit-transition: background 0.25s ease; transition: background 0.25s ease; cursor: pointer}
+.section-2 .select-player .frame:hover {background: #fff}
+.section-2 .select-player .frame img {margin: 0 auto; -webkit-transition: margin 0.25s ease; transition: margin 0.25s ease}
+.section-2 .select-player .frame:hover img {margin-top: 60px}
+.section-2 .select-player .frame figcaption {position: absolute; top: -65px; left: 0; width: 100%; color: #d8583a; font-family: 'CoreCircusPierrot2'; font-size: 56px; text-align: center; transition: all 0.25s ease}
+.section-2 .select-player .frame:hover figcaption {top: 20px}
+.section-2 .select-player .boy-1 {top: 0px; left: 300px}
+.section-2 .select-player .boy-1 img {-webkit-transform: translate(-40px, 55px); transform: translate(-40px, 55px)}
+.section-2 .select-player .boy-2 {top: 0px; left: 600px}
+.section-2 .select-player .boy-2 img {-webkit-transform: translate(-5px, 50px); transform: translate(-5px, 50px)}
+.section-2 .select-player .boy-3 {top: 0; left: 900px}
+.section-2 .select-player .boy-3 img {-webkit-transform: translate(-30px, 60px); transform: translate(-30px, 60px)}
+.section-2 .select-player .boy-4 {top: 0px; left: 1200px}
+.section-2 .select-player .boy-4 img {-webkit-transform: translate(-25px, 50px); transform: translate(-25px, 50px)}
+/*.section-2 .select-player .boy-5 {top: 0px; left: 1370px}*/
+/*.section-2 .select-player .boy-5 img {-webkit-transform: translate(5px, 50px); transform: translate(5px, 50px)}*/
+.viewport-sm .section-2 .scale {margin-top: 200px; margin-left: -35px; -webkit-transform: scale(0.6) !important; transform: scale(0.6) !important}
+.viewport-sm .section-2 .select-player .boy-1 {left: 0}
+.viewport-sm .section-2 .select-player .boy-2 {left: 0}
+.viewport-sm .section-2 .select-player .boy-3 {left: 310px}
+.viewport-sm .section-2 .select-player .boy-4 {left: 310px}
+.viewport-sm .section-2 .select-player .boy-5 {left: 620px}
+.ios.viewport-sm .section-2 .scale {margin-top: 100px; margin-left: 85px}
+.lang-pl .section-2 h2 {font-size: 100px; line-height: 1em; padding-top: 300px;}
+.lang-pl .section-2 h2 span {font-size: 72px;}
+@media all and (max-height: 800px) {
+    .viewport-xm .section-2 .select-player .boy-1,
+    .viewport-xs .section-2 .select-player .boy-1 {top: 0; left: 0}
+    .viewport-xm .section-2 .select-player .boy-2,
+    .viewport-xs .section-2 .select-player .boy-2 {top: 0; left: 310px}
+    .viewport-xm .section-2 .select-player .boy-3 {top: 0; left: 620px}
+    .viewport-xs .section-2 .select-player .boy-3 {top: 310px; left: 0px}
+    .viewport-xm .section-2 .select-player .boy-4 {top: 0; left: 930px}
+    .viewport-xs .section-2 .select-player .boy-4 {top: 310px; left: 310px}
+    .viewport-xm .section-2 .select-player .boy-5 {top: 0; left: 1240px}
+    .viewport-xs .section-2 .select-player .boy-5 {top: 620px; left: 155px}
+}
+.viewport-lg .section-2 > .fp-tableCell > h2 {margin-left: 12%; font-size: 180px}
+.viewport-lg .section-2 > .fp-tableCell > h2 span {font-size: 82px}
+.viewport-md .section-2 > .fp-tableCell > h2 {font-size: 152px}
+.viewport-md .section-2 > .fp-tableCell > h2 span {margin-left: -4px; font-size: 72px}
+.viewport-sm .section-2 > .fp-tableCell > h2,
+.viewport-xm .section-2 > .fp-tableCell > h2,
+.viewport-xs .section-2 > .fp-tableCell > h2 {position: absolute; top: 30px; width: 100%; margin: 0; font-size: 44px; letter-spacing: 0; text-align: center}
+.viewport-xm .section-2 > .fp-tableCell > h2 {top: 10px}
+.viewport-sm .section-2 > .fp-tableCell > h2 span,
+.viewport-xm .section-2 > .fp-tableCell > h2 span,
+.viewport-xs .section-2 > .fp-tableCell > h2 span {padding-left: 0; font-size: 25px; letter-spacing: -5px; text-align: center}
+.viewport-sm .section-2 > .fp-tableCell > h2 {font-size: 88px}
+.viewport-sm .section-2 > .fp-tableCell > h2 span {font-size: 39px}
+.lang-pl.viewport-lg .section-2 h2 {font-size: 75px; padding-top: 300px;}
+.lang-pl.viewport-lg .section-2 h2 span {font-size: 55px;}
+.lang-pl.viewport-md .section-2 > .fp-tableCell > h2 {font-size: 72px}
+.lang-pl.viewport-md .section-2 > .fp-tableCell > h2 span {font-size: 53px}
+.lang-pl.viewport-sm .section-2 > .fp-tableCell > h2 {font-size: 88px; letter-spacing: -17px; line-height: 0.8em}
+.lang-pl.viewport-sm .section-2 > .fp-tableCell > h2 span {font-size: 39px}
+.lang-pl.viewport-xm .section-2 > .fp-tableCell > h2,
+.lang-pl.viewport-xs .section-2 > .fp-tableCell > h2 {font-size: 34px}
+@media all and (max-height: 800px) {
+    .viewport-sm .section-2 .scale {-webkit-transform-origin: center top; transform-origin: center top}
+    .viewport-xm .section-2 .scale {-webkit-transform: scale(0.25) !important; transform: scale(0.25) !important; -webki-transform-origin: 30% 55%; transform-origin: 30% 55%}
+    .viewport-xs .section-2 .scale {-webkit-transform: scale(0.28) !important; transform: scale(0.28) !important; -webki-transform-origin: 35% 80%; transform-origin: 35% 80%}
+    .viewport-xs .section-2 nav,
+    .viewport-xs .section-2 nav .link-game {width: 100%}
+    .viewport-xs .section-2 nav .link-game {padding-left: 72px}
+    .viewport-xs .section-2 nav .link-start {position: absolute; bottom: 0; left: 0; border-right: 5px solid #FFE4BE}
+}
+.iphone.viewport-xs .section-2 h2 {top: 12px}
+.iphone.viewport-xs .section-2 .select-player {width: 290px !important}
+.iphone.viewport-xs .section-2 .player-details .avatar {-webkit-transform: scale(0.25) !important; transform: scale(0.25) !important}
+.iphone.viewport-xs .section-2 .player-details .informations {margin-top: 5px; padding: 0px 40px 10px}
+.fp-viewing-1 .section-2 h2 {-webkit-animation: fade-left 1s ease .5s both; animation: fade-left 1s ease .5s both}
+.fp-viewing-1 .section-2 h2 span {-webkit-animation: fade-left 1s ease 1s both; animation: fade-left 1s ease 1s both}
+.fp-viewing-1 .section-2 h3 {-webkit-animation: fade-left 1s ease 1s both; animation: fade-left 1s ease 1s both}
+.fp-viewing-1 .section-2 .informations p {-webkit-animation: fade-left 1.2s ease 1.4s both; animation: fade-left 1s ease 1.2s both}
+.fp-viewing-1 .section-2 .select-player div .frame {-webkit-animation: fade-up 1s ease 0.2s both; animation: fade-up 1s ease 0.2s both}
+.fp-viewing-1 .section-2 .select-player div:nth-child(2) .frame {-webkit-animation-delay: 0.4s; animation-delay: 0.4s}
+.fp-viewing-1 .section-2 .select-player div:nth-child(3) .frame {-webkit-animation-delay: 0.6s; animation-delay: 0.6s}
+.fp-viewing-1 .section-2 .select-player div:nth-child(4) .frame {-webkit-animation-delay: 0.8s; animation-delay: 0.8s}
+.fp-viewing-1 .section-2 .select-player div:nth-child(5) .frame {-webkit-animation-delay: 1.0s; animation-delay: 1.0s}
+.fp-viewing-1 .section-3,
+.fp-viewing-1 .section-4,
+.fp-viewing-1 .section-5 {visibility: hidden}
+
+.section-2 .player-details {position: absolute; top: 0; left: 0; display: none; width: 100%; height: 100%; background: #ffe4be}
+.section-2 .player-details .informations {position: relative; width: 410px; margin-left: 70%; padding: 0 40px; border: 5px solid #eda949; background: url('../img/bg_section2.gif') #ffe4be; color: #d8583a; font-size: 21px; font-weight: 700; line-height: 1.4em; text-transform: uppercase}
+.section-2 .player-details .informations h2 {margin-left: -20px; font-size: 110px; line-height: 1.4em; letter-spacing: -22px}
+.section-2 .player-details .informations h3 {margin-left: -4px; margin-bottom: 20px; font-family: 'CoreCircusPierrot2'; font-size: 24px; font-weight: 400; line-height: 1.4em; letter-spacing: -4px}
+.section-2 .player-details .informations .number {margin-top: 40px; color: #eda949; font-size: 90px; text-align: right; letter-spacing: -14px}
+.section-2 .player-details .informations .number:before {content: '#'; margin-right: 5px; font-size: 60px}
+.section-2 .player-details .avatar {top: auto; left: auto; right: 0; bottom: 0; width: 870px; height: 900px; -webkit-transform-origin: bottom right; transform-origin: bottom right}
+.section-2 .player-details .measure {position: absolute; bottom: 0; right: 0}
+.section-2 .player-details .measure p {position: absolute; bottom: 0px; right: 70px; color: #d8583a; font-weight: 700; font-size: 30px; white-space: nowrap; -webkit-transition: bottom 1s ease; transition: bottom 1s ease}
+.section-2 .player-details .measure p span {font-size: 90px; vertical-align: middle}
+.section-2 .player-details .player-avatar {position: absolute; bottom: 0; right: 30%}
+.section-2 .player-details.player-1 .player-avatar {width: 450px; height: 600px}
+.section-2 .player-details.player-1.active .measure.active p {bottom: 550px}
+.section-2 .player-details.player-2 .player-avatar {width: 450px; height: 800px}
+.section-2 .player-details.player-2.active .measure.active p {bottom: 750px}
+.section-2 .player-details.player-3 .player-avatar {width: 550px; height: 720px}
+.section-2 .player-details.player-3.active .measure.active p {bottom: 644px}
+.section-2 .player-details.player-4 .player-avatar {bottom: -35px; width: 550px; height: 780px}
+.section-2 .player-details.player-4.active .measure.active p {bottom: 710px}
+.section-2 .player-details.player-5 .player-avatar {width: 450px; height: 650px}
+.section-2 .player-details.player-5.active .measure.active p {bottom: 595px}
+.viewport-lg .section-2 .player-details .player-avatar {right: 20%}
+.viewport-md .section-2 .player-details .player-avatar {right: 10%}
+.viewport-sm .section-2 .player-details .player-avatar {right: 47%}
+.viewport-xm .section-2 .player-details .player-avatar {right: 0}
+.viewport-xs .section-2 .player-details .player-avatar {right: 20%}
+.viewport-xs .section-2 .player-details .player-avatar {height: 480px}
+.viewport-xs .section-2 .player-details .avatar {bottom: 72px}
+.viewport-sm .section-2 .player-details .fp-tableCell,
+.viewport-xm .section-2 .player-details .fp-tableCell,
+.viewport-xs .section-2 .player-details .fp-tableCell {display: block}
+.viewport-sm .section-2 .player-details .measure,
+.viewport-xm .section-2 .player-details .measure,
+.viewport-xs .section-2 .player-details .measure {display: none}
+.viewport-sm .section-2 .player-details .informations,
+.viewport-xm .section-2 .player-details .informations,
+.viewport-xs .section-2 .player-details .informations {width: 80%; max-width: none; margin: 0 auto; padding-bottom: 60px; font-size: 14px}
+.viewport-xm .section-2 .player-details .informations {padding: 30px}
+.viewport-sm .section-2 .player-details .informations {font-size: 21px}
+.viewport-md .section-2 .player-details .informations {margin-left: 35%}
+.viewport-sm .section-2 .player-details .informations {margin-top: 10%}
+.viewport-xm .section-2 .player-details .informations {width: 280px; margin: 0 auto; margin-left: 90px}
+.viewport-xm .section-2 .player-details .informations .number,
+.viewport-xs .section-2 .player-details .informations .number {position: absolute; z-index: 0; right: 20px; bottom: 20px; font-size: 60px}
+.viewport-xm .section-2 .player-details .informations .number:before,
+.viewport-xs .section-2 .player-details .informations .number:before {font-size: 30px}
+.viewport-xm .section-2 .player-details .informations h2 {margin-left: -10px; font-size: 48px; letter-spacing: -11px}
+.viewport-xs .section-2 .player-details .informations h2 {font-size: 68px}
+.viewport-xm .section-2 .player-details .informations h2 {margin-top: -20px}
+.viewport-xm .section-2 .player-details .informations h3,
+.viewport-xs .section-2 .player-details .informations h3 {font-size: 18px}
+.viewport-xs .section-2 .player-details nav,
+.viewport-xs .section-2 .player-details nav .link-game {width: 100%}
+.viewport-xs .section-2 .player-details nav .link-game {padding-left: 72px}
+.viewport-xs .section-2 .player-details nav .icon-arrow-left {position: absolute; bottom: 0; left: 0; border-right: 5px solid #FFE4BE}
+.firefox .section-2 .player-details .informations {margin-left: 40%}
+.firefox.viewport-md .section-2 .player-details .informations {margin-left: 20%}
+.firefox.viewport-sm .section-2 .player-details .informations,
+.firefox.viewport-xm .section-2 .player-details .informations,
+.firefox.viewport-xs .section-2 .player-details .informations {margin: 10% auto 0}
+.fp-viewing-1 .section-1,
+.fp-viewing-1 .section-3,
+.fp-viewing-1 .section-4,
+.fp-viewing-1 .section-5 {visibility: hidden}
+@media all and (min-height: 800px) {
+    .viewport-xm .section-2 > .fp-tableCell > .scale {top: 120px; -webkit-transform: scale(0.5) translateX(-1010px) !important; transform: scale(0.5) translateX(-1010px) !important; -webkit-transform-origin: 74% 50%; transform-origin: 74% 50%}
+    .viewport-xm .section-2 > .fp-tableCell > h2 {margin-top: 40px; font-size: 100px}
+    .viewport-xm .section-2 > .fp-tableCell > h2 span {font-size: 52px}
+    .viewport-xm .section-2 .player-details .informations {width: 80%; margin-top: 100px; font-size: 22px}
+    .viewport-xm .section-2 .player-details .informations h2 {font-size: 80px}
+    .viewport-xm .section-2 .player-details .informations h3 {font-size: 24px}
+    .viewport-xm .section-2 .player-details.player-2 .player-avatar {height: 620px}
+    .lang-pl.viewport-xm .section-2 > .fp-tableCell > h2 {font-size: 64px}
+}
+@media all and (max-height: 600px) {
+    .viewport-sm .section-2 > .fp-tableCell .scale {-webkit-transform: scale(0.4) translateX(-150px) !important; transform: scale(0.4) translateX(-150px) !important;}
+    .viewport-sm .section-2 .select-player .boy-1 {top: 0; left: 0}
+    .viewport-sm .section-2 .select-player .boy-2 {top: 0; left: 310px}
+    .viewport-sm .section-2 .select-player .boy-3 {top: 0; left: 620px}
+    .viewport-sm .section-2 .select-player .boy-4 {top: 0; left: 930px}
+    .viewport-sm .section-2 .select-player .boy-5 {top: 0; left: 1240px}
+    .viewport-sm .section-2 .player-details .informations {width: 400px; margin-top: 20px; margin-left: 120px}
+    .viewport-sm .section-2 .player-details .scale {-webkit-transform: scale(0.4) translateX(300px) !important; transform: scale(0.4) translateX(300px) !important}
+}
+
+/*----- SECTION 3 -----*/
+.section-3 {position: relative; overflow: hidden; background:  url("http://www.conceptdraw.com/How-To-Guide/picture/Sport-Basketball-court-color-Template.png"); background-size: cover; }
+.viewport-lg .section-3 .game {-webkit-transform: scale(0.75) translateY(50px); transform: scale(0.75) translateY(50px)}
+.viewport-md .section-3 .game {-webkit-transform: scale(0.7); transform: scale(0.7)}
+.viewport-sm .section-3 .game {-webkit-transform: scale(0.7); transform: scale(0.7)}
+@media all and (max-height: 800px) {
+    .viewport-xm .section-3 .game {-webkit-transform: scale(0.28); transform: scale(0.28)}
+    .viewport-xs .section-3 .game {-webkit-transform: scale(0.5); transform: scale(0.5)}
+    .viewport-xs .section-3 .game {-webkit-transform: scale(0.5); transform: scale(0.5)}
+}
+@media all and (max-height: 600px) {
+    .viewport-sm .section-3 .game {-webkit-transform: scale(0.45); transform: scale(0.45)}
+}
+.viewport-xm .section-3 .game .fan,
+.viewport-xs .section-3 .game .fan {display: none}
+.fp-viewing-2 .section-1,
+.fp-viewing-2 .section-2,
+.fp-viewing-2 .section-4,
+.fp-viewing-2 .section-5 {visibility: hidden}
+.iphone.viewport-xs .section-3 .game {-webkit-transform: scale(0.45); transform: scale(0.45)}
+.windowsphone .section-3 .game .player {display: none}
+
+/*----- SECTION 4 -----*/
+.section-4 {background: #d8583a}
+.section-4 h2 {color: #eda949; font-family: 'CoreCircusPierrot2'; font-size: 80px; font-weight: 400; line-height: 1.2em; text-align: center; -webkit-transform-origin: top center; transform-origin: top center; -webkit-backface-visibility: hidden !important; backface-visibility: hidden !important}
+.section-4 .your-result {margin: 20px 0; color: #fff; font-family: 'Courgette'; font-size: 45px; text-align: center; letter-spacing: -2px; -webkit-transform-origin: top center; transform-origin: top center}
+.section-4 .legend {color: #b5391c; font-family: 'CoreCircusPierrot2'; font-size: 30px; text-align: center; letter-spacing: -4px; -webkit-transform-origin: top center; transform-origin: top center}
+.section-4 .results {max-width: 700px; margin: 60px auto 0; font-size: 0; text-align: center; -webkit-transform-origin: top center; transform-origin: top center; -webkit-backface-visibility: hidden !important; backface-visibility: hidden !important}
+.section-4 .results p {display: inline-block; overflow: hidden; width: 50%}
+.section-4 .results-counter span {position: relative; z-index: 0; display: inline-block; width: 135px; height: 135px; margin: 0 2px; background: #b5391c; color: #fff; font-family: 'Quantico'; font-size: 90px; text-align: center}
+.section-4 .results-counter span:before {content: ''; position: absolute; top: 3px; left: 3px; z-index: -1; display: inline-block; width: 135px; height: 135px; padding-top: 3px; background: #c64b2e}
+.section-4 .results-label {display: block; margin-top: 20px; color: #eda949; font-family: 'Courgette'; font-size: 48px; text-align: center; letter-spacing: -4px}
+.section-4 .scale {position: absolute; right: 0; bottom: 0; -webkit-transform-origin: bottom right; transform-origin: bottom right}
+.section-4 .scale img {display: none; position: relative; left: 50%}
+[data-player="1"] .section-4 .scale .boy-1 img,
+[data-player="2"] .section-4 .scale .boy-2 img,
+[data-player="3"] .section-4 .scale .boy-3 img,
+[data-player="4"] .section-4 .scale .boy-4 img,
+[data-player="5"] .section-4 .scale .boy-5 img {display: block}
+.viewport-lg .section-4 h2 {font-size: 70px}
+.viewport-md .section-4 h2 {font-size: 48px}
+.viewport-sm .section-4 h2 {font-size: 56px}
+@media all and (max-height: 799px) {
+    .viewport-xm .section-4 h2 {margin-top: 10px; font-size: 24px}
+    .viewport-xs .section-4 h2 {margin-top: 10px; font-size: 28px}
+    .viewport-xm .section-4 .your-result,
+    .viewport-xs .section-4 .your-result {margin: 5px 0; font-size: 24px}
+    .viewport-xm .section-4 .results p,
+    .viewport-xs .section-4 .results p {width: 35%}
+    .viewport-xm .section-4 .legend,
+    .viewport-xs .section-4 .legend {font-size: 22px}
+    .viewport-xm .section-4 .results,
+    .viewport-xs .section-4 .results {margin-top: 5px}
+    .viewport-xs .section-4 .results p {display: block; width: 100%; margin: 10px 0}
+    .viewport-xm .section-4 .results-counter span,
+    .viewport-xs .section-4 .results-counter span {width: 60px; height: 60px; font-size: 32px; line-height: 62px}
+    .viewport-xm .section-4 .results-counter span:before,
+    .viewport-xs .section-4 .results-counter span:before {width: 60px; height: 60px}
+    .viewport-xm .section-4 .results-label,
+    .viewport-xs .section-4 .results-label {margin-top: 10px; font-size: 18px; letter-spacing: 0}
+}
+@media all and (min-height: 800px) {
+    .viewport-xm .section-4 h2 {font-size: 50px}
+}
+@media all and (max-height: 600px) {
+    .viewport-sm .section-4 h2 {font-size: 46px}
+    .viewport-sm .section-4 .your-result {margin: 0}
+    .viewport-sm .section-4 .results {margin-top: 20px; transform: scale(0.7); -webkit-transform: scale(0.7)}
+}
+.viewport-sm .section-4 .scale,
+.viewport-xm .section-4 .scale,
+.viewport-xs .section-4 .scale {display: none}
+.iphone.viewport-xs .section-4 h2 {margin-top: 10px; font-size: 19px}
+.iphone.viewport-xs .section-4 .your-result {font-size: 18px; letter-spacing: -1px !important}
+.iphone.viewport-xs .section-4 .legend {font-size: 17px; letter-spacing: 0}
+.fp-viewing-3 .section-1,
+.fp-viewing-3 .section-2,
+.fp-viewing-3 .section-3 {visibility: hidden}
+
+/*----- SECTION 5 -----*/
+.section-5 {background: url('../img/bg_section1.gif') #ffc97e}
+.section-5 h2 {color: #d8583a; font-family: 'CoreCircusPierrot2'; font-size: 80px; font-weight: 400; line-height: 1.2em; letter-spacing: -16px;}
+.section-5 h3 {margin: 20px 0 10px; color: #d8583a; font-family: 'CoreCircusPierrot2'; font-size: 38px; font-weight: 400; line-height: 1.2em; letter-spacing: -7px}
+.section-5 .names {color: #d8583a; font-family: 'Courgette'; font-size: 48px; letter-spacing: -2px}
+.section-5 .cup {position: absolute; bottom: 0; right: 30%; width: 215px; height: 360px; margin: 0 40px}
+.section-5 .cup > * {display: none; width: 100%}
+[data-player="1"] .section-5 .cup-1,
+[data-player="2"] .section-5 .cup-2,
+[data-player="3"] .section-5 .cup-3,
+[data-player="4"] .section-5 .cup-4,
+[data-player="5"] .section-5 .cup-5 {display: block}
+.section-5 .gortat {position: absolute; bottom: 0; right: 5%; width: 400px}
+.section-5 .buttons {margin-top: 60px}
+.section-5 .button {position: relative; display: block; width: 460px; padding-left: 90px}
+.section-5 .button + .button {margin-top: 40px}
+.section-5 .button:before {position: absolute; top: 48px; left: 55px; color: #ffc97e}
+.section-5 .button:hover:before{color: #d8583a}
+.section-5 .social {margin-top: 40px}
+.section-5 .social > * {vertical-align: top !important}
+.viewport-lg .section-5 h2 {font-size: 54px; letter-spacing: -10px !important}
+.viewport-md .section-5 h2 {font-size: 36px; letter-spacing: -5px !important}
+.viewport-sm .section-5 h2 {margin-top: 20px; font-size: 42px; letter-spacing: -7px !important}
+.viewport-xm .section-5 h2,
+.viewport-xs .section-5 h2 {margin-right: 40px; font-size: 20px; letter-spacing: -2px !important}
+.viewport-xm .section-5 h2 {margin: 0 40px 0}
+.viewport-lg .section-5 h3 {font-size: 26px; letter-spacing: -5px !important}
+.viewport-md .section-5 h3 {font-size: 22px; letter-spacing: -3px !important}
+.viewport-xm .section-5 h3,
+.viewport-xs .section-5 h3 {margin: 5px 0; font-size: 16px; letter-spacing: -1px !important}
+.viewport-md .section-5 .names {font-size: 32px}
+.viewport-xm .section-5 .names,
+.viewport-xs .section-5 .names {font-size: 24px}
+.viewport-lg .section-5,
+.viewport-md .section-5 {padding-left: 160px}
+.viewport-xs .section-5 > * {display: block}
+.viewport-sm .section-5 .container,
+.viewport-xm .section-5 .container,
+.viewport-xs .section-5 .container {padding-top: 10px; text-align: center}
+.viewport-sm .section-5 .social {margin-bottom: 260px}
+.viewport-xm .section-5 .buttons {margin-left: 60px}
+.viewport-xm .section-5 .buttons,
+.viewport-xs .section-5 .buttons {margin-top: 10px}
+.viewport-xm .section-5 .social,
+.viewport-xs .section-5 .social {margin-top: 10px}
+.viewport-xm .section-5 .social {margin-left: 60px; text-align: left}
+.viewport-xm .section-5 .social > iframe {display: block; margin-top: 5px}
+.viewport-lg .section-5 .button {width: 400px; padding-left: 70px}
+.viewport-md .section-5 .button {width: 300px; padding-left: 60px; font-size: 16px}
+.viewport-lg .section-5 .button:before {left: 38px}
+.viewport-md .section-5 .button:before {top: 46px; left: 36px}
+.viewport-lg .section-5 .gortat {right: 2%; width: 350px}
+.viewport-md .section-5 .gortat {width: 280px; right: 2%}
+.viewport-sm .section-5 .gortat {width: 240px; right: 0}
+.viewport-lg .section-5 .cup {right: 27%}
+.viewport-md .section-5 .cup {right: 27%; width: 154px; height: 260px}
+.viewport-sm .section-5 .cup {left: 38.5%; width: 105px; height: 177px}
+@media all and (max-height: 799px) {
+    .viewport-sm .section-5 .button {width: 450px; margin: 0 auto; margin-bottom: 10px; padding-left: 120px}
+    .viewport-xm .section-5 .button,
+    .viewport-xs .section-5 .button {width: 250px; height: auto; padding: 20px; font-size: 16px}
+    .viewport-xm .section-5 .button {width: 210px; font-size: 12px; padding: 15px 10px; padding-left: 40px}
+    .viewport-xs .section-5 .button {width: 300px; padding: 14px 16px; padding-left: 60px}
+    .viewport-xm .section-5 .button + .button,
+    .viewport-xs .section-5 .button + .button {margin-top: 10px}
+    .viewport-xm .section-5 .button:before {top: 20px; left: 24px; font-size: 16px}
+    .viewport-xs .section-5 .button:before {top: 20px; left: 35px; font-size: 16px}
+    .viewport-sm .section-5 .gortat {width: 170px; right: 20%}
+    .viewport-xm .section-5 .gortat {width: 90px; right: 1%}
+    .viewport-xs .section-5 .gortat {width: 80px; right: 10%}
+    .viewport-sm .section-5 .cup {float: right; left: 25%; width: 105px; height: 177px}
+    .viewport-xm .section-5 .cup,
+    .viewport-xs .section-5 .cup {right: 35%; width: 45px; height: 75px}
+    .viewport-xm .section-5 .cup {right: 13%}
+}
+@media all and (min-height: 800px) {
+    .viewport-xm .fp-tableCell {padding-top: 80px; vertical-align: top}
+    .viewport-xm .section-5 .container {width: 95%}
+    .viewport-xm .section-5 h2 {font-size: 40px}
+    .viewport-xm .section-5 h3 {margin: 20px 0; font-size: 26px}
+    .viewport-xm .section-5 .names {font-size: 34px}
+    .viewport-xm .section-5 .social {margin-top: 40px}
+    .viewport-xm .section-5 .gortat {width: 240px}
+    .viewport-xm .section-5 .cup {right: 42%; width: 125px; height: 210px}
+}
+@media all and (max-height: 600px) {
+    .viewport-sm .section-5 .buttons {margin-top: 10px}
+    .viewport-sm .section-5 .button {width: 290px; height: auto; margin-left: 110px; padding: 20px; padding-left: 60px; font-size: 16px}
+    .viewport-sm .section-5 .button:before {top: 26px; left: 35px; font-size: 16px}
+    .viewport-sm .section-5 .social {margin-top: 20px; margin-bottom: 0; padding-left: 110px; text-align: left}
+    .viewport-sm .section-5 .cup {left: auto; right: 15%; width: 65px; height: 110px}
+    .viewport-sm .section-5 .gortat {right: 0; width: 140px}
+}
+
+.section-5 .modal-school {position: absolute; top: 0; left: 0; z-index: 10; display: none; width: 100%; height: 100%; background: url('../img/bg_section3.gif') #fff}
+.section-5 .modal-school h2 {margin-bottom: 120px; color: #eda949; font-family: 'CoreCircusPierrot2'; font-size: 48px; font-weight: 400; letter-spacing: -8px; text-align: center; text-transform: lowercase}
+.section-5 .modal-school .schools {font-size: 0}
+.section-5 .modal-school .school {position: relative; display: inline-block; width: 50%; height: 190px; height: 23vh; padding: 25px 30px; border-width: 1px 1px 0 1px; border-style: solid; border-color: #eda949; background: #fff; color: #838383; font-size: 24px}
+.section-5 .modal-school .school:after {content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-width: 0; border-style: solid; border-color: #eda949; -webkit-transition: all 0.25s ease; transition: all 0.25s ease}
+.section-5 .modal-school .school:nth-child(2n) {border-width: 1px 0 0 1px}
+.section-5 .modal-school .school:nth-last-child(1),
+.section-5 .modal-school .school:nth-last-child(2) {border-bottom-width: 1px}
+.section-5 .modal-school .school:hover:after {border-width: 5px}
+.section-5 .modal-school .school span {position: absolute; right: 30px; bottom: 25px}
+.viewport-xs .section-5 .modal-school .schools {overflow-y: scroll}
+.viewport-xm .section-5 .modal-school h2,
+.viewport-xs .section-5 .modal-school h2 {margin: 20px 40px; font-size: 26px; letter-spacing: -6px}
+.viewport-xm .section-5 .modal-school .school,
+.viewport-xs .section-5 .modal-school .school {display: block; width: 100%; height: 50px; padding: 10px}
+.viewport-xm .section-5 .modal-school .school,
+.viewport-xm .section-5 .modal-school .school:nth-last-child(2),
+.viewport-xs .section-5 .modal-school .school,
+.viewport-xs .section-5 .modal-school .school:nth-last-child(2) {border-width: 1px 1px 0 1px}
+.viewport-xm .section-5 .modal-school .school img,
+.viewport-xs .section-5 .modal-school .school img {display: block; height: 60px; margin: 0 auto 5px}
+.viewport-xm .section-5 .modal-school .school span,
+.viewport-xs .section-5 .modal-school .school span {position: static; display: block; text-align: center}
+.fp-viewing-4 .section-1,
+.fp-viewing-4 .section-2,
+.fp-viewing-4 .section-3 {visibility: hidden}
+
+/* About */
+.modal-about {display: none; position: absolute; top: 0; left: 0; z-index: 10; width: 100%; height: 100%; background: url('../img/bg_section3.gif') #fff}
+.modal-about .container {position: relative}
+.modal-about header {margin-bottom: -80px; font-size: 0}
+.modal-about header p {display: inline-block; width: 100%; margin-bottom: 110px; padding-left: 400px; color: #eda949; font-family: 'CoreCircusPierrot2'; font-size: 105px; font-weight: 400; line-height: 1em; letter-spacing: -21px; text-transform: lowercase; vertical-align: middle}
+.modal-about figure {position: absolute; bottom: 0; left: -15%; display: block; width: 35%; vertical-align: middle}
+.modal-about ol {padding-left: 400px}
+.modal-about ol>li {counter-increment: ordered-list; position: relative; width: 100%; min-height: 80px; padding-left: 180px; padding-bottom: 80px; color: #d8583a; font-size: 22px; line-height: 1.2em; text-transform: uppercase}
+.modal-about ol>li:before {content: '0'counter(ordered-list)'.'; position: absolute; top: -25px; left: 0; color: #eda949; font-family: 'CoreCircusPierrot2'; font-size: 80px; line-height: 1.2em; letter-spacing: -14px}
+.modal-about footer {position: absolute; right: 0; bottom: 0; padding: 21px 21px; background: #f2f2f2; color: #a6a6a6; font-size: 15px; text-transform: uppercase}
+.modal-about footer a,
+.modal-about footer span {display: inline-block; margin: 0 10px}
+.modal-about footer a {color: #d8583a}
+.viewport-xm .modal-about footer {padding: 5px; font-size: 12px}
+.viewport-xs .modal-about footer {width: 100%; padding: 4px 8px; font-size: 12px; text-align: center}
+.viewport-xs .modal-about footer span {display: block; margin: 0 10px}
+.viewport-xm .modal-about footer a,
+.viewport-xs .modal-about footer a {margin: 5px}
+.viewport-lg .modal-about header p,
+.viewport-lg .modal-about ol,
+.viewport-md .modal-about header p,
+.viewport-md .modal-about ol,
+.viewport-sm .modal-about header p,
+.viewport-sm .modal-about ol {padding-left: 230px}
+.viewport-xm .modal-about header p,
+.viewport-xm .modal-about ol {padding-left: 90px}
+.viewport-xs .modal-about header p,
+.viewport-xs .modal-about ol {padding-left: 0}
+.viewport-md .modal-about header,
+.viewport-sm .modal-about header {margin-bottom: -60px}
+.viewport-xm .modal-about header,
+.viewport-xs .modal-about header {margin-bottom: 20px}
+.viewport-md .modal-about header p,
+.viewport-sm .modal-about header p {font-size: 60px; letter-spacing: -10px;}
+.viewport-xm .modal-about header p,
+.viewport-xs .modal-about header p {margin-bottom: 0}
+.viewport-xs .modal-about header > * {display: block; width: 100%; font-size: 32px; letter-spacing: -4px; text-align: center}
+.viewport-sm .modal-about figure,
+.viewport-xm .modal-about figure {left: -5%}
+.viewport-xm .modal-about figure {width: 25%}
+.viewport-xs .modal-about figure {display: none; height: 120px; margin-left: 0; left: 50%; transform: translateX(-50%)}
+.viewport-md .modal-about ol>li,
+.viewport-sm .modal-about ol>li {padding-left: 120px; padding-bottom: 40px}
+.viewport-xm .modal-about ol>li,
+.viewport-xs .modal-about ol>li {width: 100%; min-height: 40px; padding-left: 90px; padding-bottom: 10px; font-size: 16px}
+.viewport-xm .modal-about ol>li {padding-left: 60px; font-size: 14px}
+.viewport-md .modal-about ol>li:before,
+.viewport-sm .modal-about ol>li:before {top: -15px; font-size: 38px; letter-spacing: -8px}
+.viewport-xm .modal-about ol>li:before {top: -8px; padding-left: 0; font-size: 24px; letter-spacing: -2px}
+.viewport-xs .modal-about ol>li:before {top: -15px; padding-left: 0; font-size: 36px; letter-spacing: -4px}
+.iphone.viewport-xs .modal-about header figure {height: 80px; margin-top: 5px}
+.iphone.viewport-xs .modal-about ol>li {padding-left: 70px; font-size: 13px}
+.iphone.viewport-xs .modal-about ol>li:before {font-size: 28px}
+@media all and (max-height: 600px) {
+    .viewport-sm .modal-about header {margin: 0}
+    .viewport-sm .modal-about header p {margin: 0; padding-bottom: 20px; font-size: 54px; letter-spacing: -10px}
+    .viewport-sm .modal-about figure {left: 0; width: 20%}
+    .viewport-sm .modal-about ol>li {padding-left: 90px; font-size: 18px}
+    .viewport-sm .modal-about ol>li:before {font-size: 38px; letter-spacing: -8px}
+}
+@media all and (max-height: 799px) {
+    .viewport-xm .modal-about header > * {font-size: 32px; letter-spacing: -4px; text-align: center}
+}
+@media all and (min-height: 800px) {
+    .viewport-xm .modal-about .fp-tableCell {padding-top: 0}
+    .viewport-xm .modal-about .container {width: 90%}
+    .viewport-xm .modal-about header {margin: 80px 0 40px}
+    .viewport-xm .modal-about header > * {font-size: 60px; letter-spacing: -4px; text-align: center}
+    .viewport-xm .modal-about header p,
+    .viewport-xm .modal-about ol {margin-top: 40px; padding-left: 0}
+    .viewport-xm .modal-about ol>li {padding-left: 90px; padding-bottom: 20px; font-size: 20px}
+    .viewport-xm .modal-about ol>li:before {font-size: 32px}
+    .viewport-xm .modal-about figure {left: 0; width: 38%}
+}
+.lang-pl .modal-about ol>li:nth-child(3) {padding-top: 15px}
+
+.page-error {background: url('../img/bg_section1.gif') #ffc97e}
+.page-error .container {width: 100%; max-width: 1040px; padding: 0 20px; -webkit-perspective: 1000px; perspective: 1000px}
+.page-error h1 {color: #d8583a; font-family: 'CoreCircusPierrot2'; font-size: 105px; font-weight: 400; letter-spacing: -21px; -webkit-backface-visibility: hidden !important; backface-visibility: hidden !important; -webkit-transform-origin: top center; transform-origin: top center; -webkit-transform: rotateX(-100deg); transform: rotateX(-100deg)}
+.page-error h1 + p {color: #eda949; font-family: 'CoreCircusPierrot2'; font-size: 45px; font-weight: 400; letter-spacing: -8px; -webkit-backface-visibility: hidden !important; backface-visibility: hidden !important; -webkit-transform-origin: top center; transform-origin: top center; -webkit-transform: rotateX(-100deg); transform: rotateX(-100deg)}
+.page-error .scale {position: absolute; bottom: 0; -webkit-transform-origin: center bottom; transform-origin: center bottom}
+.page-error figure {width: 550px; -webkit-transform-origin: center bottom; transform-origin: center bottom}
+.page-error .fp-tableCell {position: relative; z-index: 2}
+.page-error .v-align {direction: rtl; -webkit-transform-origin: center bottom; transform-origin: center bottom}
+.page-error .v-align > * {width: 375px; direction: ltr}
+.page-error .button {margin-top: 60px; padding: 27px 41px; font-size: 20px; -webkit-backface-visibility: hidden !important; backface-visibility: hidden !important; -webkit-transform-origin: top center; transform-origin: top center; -webkit-transform: rotateX(-100deg); transform: rotateX(-100deg); -webkit-transition: background 0.25s ease, color 0.25s ease; transition: background 0.25s ease, color 0.25s ease}
+.page-error .button:before {color: #ffc97e; font-size: 50px; -webkit-transition: all 0.25s ease; transition: all 0.25s ease}
+.page-error .button:hover:before {color: #fff}
+
+@media all and (max-width: 768px) and (max-height: 480px){
+    .page-error h1 {font-size: 64px; letter-spacing: -12px}
+    .page-error h1 + p {font-size: 32px; letter-spacing: -4px}
+    .page-error h1,
+    .page-error h1 + p {margin-left: -14px}
+    .page-error .scale {left: 0%}
+    .page-error figure {width: 100% !important; height: 50% !important}
+    .page-error figure img {width: auto; height: 100%;  margin: 0 auto}
+    .page-error .fp-tableCell {width: 260px}
+    .page-error .button {margin-top: 20px; padding: 17px 21px; font-size: 20px; font-size: 15px}
+    .page-error .button:before {top: 7px; left: -7px; font-size: 28px}
+    .page-error .scale {left: 0%; -webkit-transform-origin: 20px 100%; transform-origin: 20px 100%; -webkit-transform: scale(0.65) !important; transform: scale(0.65) !important}
+}
+
+@media all and (max-width: 768px) and (min-height: 481px){
+    .page-error .fp-tableCell {display: block; width: 100%; text-align: center}
+    .page-error .scale {left: 50%; -webkit-transform-origin: center bottom; transform-origin: center bottom; -webkit-transform: translateX(-50%) scale(0.65) !important; transform: translateX(-50%) scale(0.65) !important}
+}
+
+@media all and (max-width: 479px) {
+    .page-error .fp-tableCell {display: block; width: 100%; text-align: center}
+    .page-error .scale {left: 50%; -webkit-transform-origin: center bottom; transform-origin: center bottom; -webkit-transform: translateX(-50%) scale(0.5) !important; transform: translateX(-50%) scale(0.5) !important}
+}
