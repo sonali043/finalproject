@@ -68,14 +68,14 @@
 .game .player.throw .legs {-webkit-animation: throw-legs 0.5s ease-out 0.5s; animation: throw-legs 0.5s ease-out 0.5s}
 .game .player.throw .hands {-webkit-animation: throw-hands 4s ease-out; animation: throw-hands 4s ease-out}
 
-[data-player="2"] .game .player .body {bottom: 80px; height: 300px; background-image: url('../img/game/player-2/body.svg')}
-[data-player="2"] .player .legs {bottom: -115px; width: 120px; height: 220px; margin-left: -1px; background-image: url('../img/game/player-2/legs.svg')}
+[data-player="2"] .game .player .body {bottom: 80px; height: 300px; background-image: url('../img/game/player-1/green body.svg')}
+[data-player="2"] .player .legs {bottom: -115px; width: 120px; height: 220px; margin-left: -1px; background-image: url('../img/game/player-1/leggreen.svg')}
 [data-player="2"] .player .hands {background-image: url('../img/game/player-2/hands.svg')}
-[data-player="3"] .game .player .body {background-image: url('../img/game/player-3/body.svg')}
-[data-player="3"] .player .legs {bottom: 10px; background-image: url('../img/game/player-3/legs.svg')}
+[data-player="3"] .game .player .body {background-image: url('../img/game/player-1/red body.svg')}
+[data-player="3"] .player .legs {bottom: 10px; background-image: url('../img/game/player-1/legred.svg')}
 [data-player="3"] .player .hands {background-image: url('../img/game/player-3/hands.svg')}
-[data-player="4"] .game .player .body {background-image: url('../img/game/player-4/body.svg')}
-[data-player="4"] .player .legs {bottom: 28px; background-image: url('../img/game/player-4/legs.svg')}
+[data-player="4"] .game .player .body {background-image: url('../img/game/player-1/purple body.svg')}
+[data-player="4"] .player .legs {bottom: 28px; background-image: url('../img/game/player-1/legpurple.svg')}
 [data-player="4"] .player .hands {background-image: url('../img/game/player-4/hands.svg')}
 [data-player="5"] .game .player .body {background-image: url('../img/game/player-5/body.svg')}
 [data-player="5"] .player .legs {bottom: 10px; width: 125px; margin-left: -3px; background-image: url('../img/game/player-5/legs.svg')}
