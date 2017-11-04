@@ -24,21 +24,205 @@
 
 </head>
 <body data-player="1" class="loading">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v2.3";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
-<div id="page" >
+<figure class="logo-small rwd">
+    <img src="img/logo.svg" alt="Logo">
+</figure>
+
+<button class="button about" data-modal-open=".modal-about">About</button>
+<div class="modal-about">
+    <div class="container">
+        <div class="v-align fp-tableCell">
+            <header>
+                <p>What's all that?</p>
+            </header>
+            <ol>
+                <li>It's a non-profit project that aims to propagate basketball among children and youngsters</li>
+                <li>It's a place where you can interactively get to know Marcin Gortat's foundation</li>
+                <li>It's an interactive way of spending free</li>
+            </ol>
+            <figure class="rwd">
+                <img src="img/gortat.svg" alt="I love this fame">
+            </figure>
+        </div>
+    </div>
+    <footer>
+        <span>Projekt i wykonanie:</span>
+        <a href="http://torpedov.com" target="blank">torpedov.com</a>
+        <a href="http://piotrswierkowski.com" target="blank">piotrswierkowski.com</a>
+        <a href="http://yaceky.com" target="blank">Jacek Janiczak</a>
+    </footer>
+    <button class="button about" data-modal-close=".modal-about">Close</button>
+</div>
+<div id="page">
+    <section class="section section-1" data-anchor="section-1">
+    </section>
+
+    <section class="section section-2" data-anchor="section-2">
+    </section>
 
     <section class="section section-3" data-anchor="section-3">
-
-        <div class="game scale-game" style="margin-top: 60px">
+        <div class="game-results">
+            <p class="points"><span>00</span></p>
+            <p class="throws"><span><span class="throws-count">0</span> / 10</span></p>
+        </div>
+        <div class="game scale-game">
             <div>
-                <div class="power-bar" >
+                <div class="background">
+                    <img src="img/game/fan_1.svg" class="fan fan-1">
+                    <img src="img/game/fan_2.svg" class="fan fan-2">
+                    <img src="img/game/fan_3.svg" class="fan fan-3">
+                    <img src="img/game/fan_1.svg" class="fan fan-4">
+                    <img src="img/game/fan_2.svg" class="fan fan-5">
+                    <img src="img/game/fan_3.svg" class="fan fan-6">
+                    <img src="img/game/fan_2.svg" class="fan fan-7">
+                    <img src="img/game/fan_3.svg" class="fan fan-8">
+                    <img src="img/game/fan_1.svg" class="fan fan-9">
+                    <img src="img/game/field.svg" class="field">
+                </div>
+                <figure class="basket">
+                    <img src="img/game/basket_field.svg" class="basket-field">
+                    <img src="img/game/basket_net.png" class="basket-net">
+                    <img src="img/game/basket_bar.svg" class="basket-bar">
+                    <div class="ball-wrapper">
+                        <img src="img/game/ball.png" class="ball">
+                    </div>
+                    <div class="player">
+                        <div class="legs"></div>
+                        <div class="hands"></div>
+                        <div class="body"></div>
+                    </div>
+                </figure>
+                <div class="power-bar">
                     <img src="img/game/power_bar_ball.png" class="power-bar-handler">
                 </div>
             </div>
         </div>
+        <nav>
+            <button class="icon-arrow-up link-start">Back to top</button>
+            <button class="icon-arrow-down next link-results">Scroll down</button>
+        </nav>
     </section>
+
+    <section class="section section-4" data-anchor="section-4">
+        <h2>You can be<br>a basketballer</h2>
+        <p class="your-result">This is your score</p>
+        <p class="legend">1point = 5fans</p>
+        <div class="results">
+            <p class="points">
+                <span class="results-counter" data-to="0"><span>0</span><span>0</span></span>
+                <span class="results-label">pts</span>
+            </p>
+            <p class="fans">
+                <span class="results-counter" data-to="0"><span>0</span><span>0</span></span>
+                <span class="results-label">fans</span>
+            </p>
+        </div>
+        <div class="scale">
+            <figure class="boy-1">
+                <img src="img/boy1.svg">
+            </figure>
+            <figure class="boy-2">
+                <img src="img/boy2.svg">
+            </figure>
+            <figure class="boy-3">
+                <img src="img/boy3.svg">
+            </figure>
+            <figure class="boy-4">
+                <img src="img/boy4.svg">
+            </figure>
+            <figure class="boy-5">
+                <img src="img/boy5.svg">
+            </figure>
+        </div>
+        <nav>
+            <button class="icon-arrow-down next link-end">Scroll down</button>
+        </nav>
+    </section>
+
+    <section class="section section-5" data-anchor="section-5">
+        <div class="container">
+            <h2>Show your skills on a court!</h2>
+            <h3>Marcin Gortat's MG13 foundation</h3>
+            <p class="names">supports young talents</p>
+            <div class="buttons">
+                <p>
+                    <a href="https://www.facebook.com/pages/Fundacja-MG13/231136810334328" target="blank" class="button icon-facebook big">
+                        Visit MG13 foundation                            </a>
+                    <a href="https://www.facebook.com/marcingortat.MG13" target="blank" class="button icon-facebook big secondary">
+                        Visit Marcin Gortat                            </a>
+                </p>
+            </div>
+            <div class="social">
+                <div class="fb-like" data-href="http://www.ilovethisfame.com/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+                <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            </div>
+        </div>
+        <figure class="cup">
+            <img src="img/game/player-1/cup.svg" class="cup-1">
+            <img src="img/game/player-2/cup.svg" class="cup-2">
+            <img src="img/game/player-3/cup.svg" class="cup-3">
+            <img src="img/game/player-4/cup.svg" class="cup-4">
+            <img src="img/game/player-5/cup.svg" class="cup-5">
+        </figure>
+        <figure class="gortat">
+            <img src="img/gortat.svg" class="gortat">
+        </figure>
+
+        <div class="modal-school">
+            <div class="container">
+                <div class="v-align fp-tableCell">
+                    <div class="container schools">
+                        <h2>Basketball schools</h2>
+                        <a href="#" target="blank" class="school">
+                            <img src="img/img_logo_school.png" alt="School logo">
+                            <span>UKS 7 Sopot</span>
+                        </a>
+                        <a href="#" target="blank" class="school">
+                            <img src="img/img_logo_school.png" alt="School logo">
+                            <span>UKS 7 Sopot</span>
+                        </a>
+                        <a href="#" target="blank" class="school">
+                            <img src="img/img_logo_school.png" alt="School logo">
+                            <span>UKS 7 Sopot</span>
+                        </a>
+                        <a href="#" target="blank" class="school">
+                            <img src="img/img_logo_school.png" alt="School logo">
+                            <span>UKS 7 Sopot</span>
+                        </a>
+                        <a href="#" target="blank" class="school">
+                            <img src="img/img_logo_school.png" alt="School logo">
+                            <span>UKS 7 Sopot</span>
+                        </a>
+                        <a href="#" target="blank" class="school">
+                            <img src="img/img_logo_school.png" alt="School logo">
+                            <span>UKS 7 Sopot</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <nav>
+                <button class="icon-arrow-left" data-modal-close=".modal-school">Back to list</button>
+                <button class="icon-ball link-game reset">Play again</button>
+            </nav>
+        </div>
+        <nav>
+            <button class="icon-arrow-up link-start">Back to top</button>
+            <button class="icon-ball link-game reset">Play again</button>
+        </nav>
+    </section>
+
 </div>
 
-<script data-main="js/script" src="js/lib/requirejs.min.js"></script>
+<script data-main="js/main.min" src="js/lib/requirejs.min.js"></script>
 </body>
 </html>
