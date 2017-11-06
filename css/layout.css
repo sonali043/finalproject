@@ -411,14 +411,14 @@ section {position: relative; width: 100%; height: 100%; -webkit-perspective: 600
 .windowsphone .section-3 .game .player {display: none}
 
 /*----- SECTION 4 -----*/
-.section-4 {background: #d8583a}
+.section-4 {background: #ffe4be}
 .section-4 h2 {color: #eda949; font-family: 'CoreCircusPierrot2'; font-size: 80px; font-weight: 400; line-height: 1.2em; text-align: center; -webkit-transform-origin: top center; transform-origin: top center; -webkit-backface-visibility: hidden !important; backface-visibility: hidden !important}
 .section-4 .your-result {margin: 20px 0; color: #fff; font-family: 'Courgette'; font-size: 45px; text-align: center; letter-spacing: -2px; -webkit-transform-origin: top center; transform-origin: top center}
 .section-4 .legend {color: #b5391c; font-family: 'CoreCircusPierrot2'; font-size: 30px; text-align: center; letter-spacing: -4px; -webkit-transform-origin: top center; transform-origin: top center}
 .section-4 .results {max-width: 700px; margin: 60px auto 0; font-size: 0; text-align: center; -webkit-transform-origin: top center; transform-origin: top center; -webkit-backface-visibility: hidden !important; backface-visibility: hidden !important}
 .section-4 .results p {display: inline-block; overflow: hidden; width: 50%}
 .section-4 .results-counter span {position: relative; z-index: 0; display: inline-block; width: 135px; height: 135px; margin: 0 2px; background: #b5391c; color: #fff; font-family: 'Quantico'; font-size: 90px; text-align: center}
-.section-4 .results-counter span:before {content: ''; position: absolute; top: 3px; left: 3px; z-index: -1; display: inline-block; width: 135px; height: 135px; padding-top: 3px; background: #c64b2e}
+.section-4 .results-counter span:before {content: ''; position: absolute; left: 3px; z-index: -1; display: inline-block; width: 135px; height: 135px; padding-top: 3px; background: #365899}
 .section-4 .results-label {display: block; margin-top: 20px; color: #eda949; font-family: 'Courgette'; font-size: 48px; text-align: center; letter-spacing: -4px}
 .section-4 .scale {position: absolute; right: 0; bottom: 0; -webkit-transform-origin: bottom right; transform-origin: bottom right}
 .section-4 .scale img {display: none; position: relative; left: 50%}
